@@ -1,0 +1,42 @@
+{
+    "name": "cahayana/cahayana",
+    "description": "laravel library support",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "singkek",
+            "email": "singkek@icigongroup.com"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^7.4|^8.0",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "illuminate/support": "^8",
+        "illuminate/redis": "^8",
+        "illuminate/database": "^8"
+    },
+    "require-dev": {},
+    "autoload": {
+        "files": [],
+        "psr-4": {
+            "Cahayana\\": "src/Cahayana/"
+        }
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Cahayana\\Redis\\RedisServiceProvider",
+                "Cahayana\\Databases\\DatabasesServiceProvider"
+            ],
+            "aliases": {
+            }
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "prefer-stable": true
+}
