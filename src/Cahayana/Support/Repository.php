@@ -9,9 +9,9 @@
  **/
 namespace Cahayana\Support;
 
-use Cahayana\Databases\Bus\Databases;
+use Cahayana\Databases\Databases;
 
-Class Repository
+class Repository extends Databases
 {
-    use Databases;
+
 }

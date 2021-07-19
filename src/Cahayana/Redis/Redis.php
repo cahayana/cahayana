@@ -15,6 +15,19 @@ use Illuminate\Support\Facades\Redis as LaravelRedis;
 class Redis implements RedisInterface
 {
     /**
+     * set redis db used
+     *
+     * @param int $db [db number]
+     * @return Redis
+     */
+    public function select_db(int $db)
+    {
+        LaravelRedis::select($db);
+
+        return $this ;
+    }
+
+    /**
      * set redis data permanently and replace if exist old data
      *
      * @param string $key

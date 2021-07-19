@@ -10,9 +10,8 @@
 namespace Cahayana\Databases;
 
 use Cahayana\Contracts\Databases\DatabasesInterface;
-use Cahayana\Databases\Bus\Databases as DatabasesTrait;
 
 class Databases implements DatabasesInterface
 {
-    use DatabasesTrait;
+    use \Cahayana\Databases\Traits\Databases;
 }
