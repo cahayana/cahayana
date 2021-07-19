@@ -9,16 +9,20 @@
         }
     ],
     "require": {
-        "php": "^7.3|^7.4|^8.0",
+        "php": "^7.4|^8.0",
         "ext-json": "*",
         "ext-mbstring": "*",
+        "ext-zlib": "*",
         "illuminate/support": "^8",
         "illuminate/redis": "^8",
-        "illuminate/database": "^8"
+        "illuminate/database": "^8",
+        "jenssegers/agent": "^2"
     },
     "require-dev": {},
     "autoload": {
-        "files": [],
+        "files": [
+            "src/Cahayana/Helpers/helpers.php"
+        ],
         "psr-4": {
             "Cahayana\\": "src/Cahayana/"
         }
@@ -27,10 +31,15 @@
     "extra": {
         "laravel": {
             "providers": [
+                "Cahayana\\Config\\ConfigServiceProvider",
                 "Cahayana\\Redis\\RedisServiceProvider",
-                "Cahayana\\Databases\\DatabasesServiceProvider"
+                "Cahayana\\Databases\\DatabasesServiceProvider",
+                "Cahayana\\Response\\ResponseServiceProvider"
             ],
             "aliases": {
+                "Repository": "Cahayana\\Support\\Facade\\Repository",
+                "Redis": "Cahayana\\Support\\Facade\\Redis",
+                "Response": "Cahayana\\Support\\Facade\\Response"
             }
         }
     },

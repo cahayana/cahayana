@@ -12,6 +12,14 @@ namespace Cahayana\Contracts\Redis;
 interface RedisInterface
 {
     /**
+     * set redis db used
+     *
+     * @param int $db [db number]
+     * @return \Cahayana\Redis\Redis
+     */
+    public function select_db(int $db);
+
+    /**
      * set redis data permanently and replace if exist old data
      *
      * @param string $key

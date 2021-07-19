@@ -12,6 +12,7 @@ namespace Cahayana\Support\Facade;
 use Illuminate\Support\Facades\Facade;
 
 /**
+ * @method static boolean select_db(int $db) select used db redis
  * @method static boolean set(string $key, string $value, int $expire_in = null) set redis data permanently and replace if exist old data.
  * @method static boolean set_if_not_exist(string $key, string $value, int $expire_in = null) set redis data permanently if old data not exist
  * @method static mixed get(string $key) get redis value by key
