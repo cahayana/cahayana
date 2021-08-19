@@ -118,10 +118,10 @@ class Redis implements RedisInterface
      *
      * @param string $key
      * @param int $score
-     * @param int $member
+     * @param string $member
      * @return array
      */
-    public function z_add_nx(string $key, int $score, int $member)
+    public function z_add_nx(string $key, int $score, string $member)
     {
         return LaravelRedis::zadd($key, 'NX', $score, $member);
     }
