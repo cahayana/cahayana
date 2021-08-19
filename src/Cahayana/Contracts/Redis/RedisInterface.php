@@ -78,10 +78,10 @@ interface RedisInterface
      *
      * @param string $key
      * @param int $score
-     * @param int $member
+     * @param string $member
      * @return array
      */
-    public function z_add_nx(string $key, int $score, int $member);
+    public function z_add_nx(string $key, int $score, string $member);
 
     /**
      * return the score of a member from sorted set
