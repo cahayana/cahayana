@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @package     Helpers - Encryption Helpers
  * @author      singkek
@@ -8,8 +7,6 @@
  **/
 
 use Cahayana\Encryption\Aes\Aes;
-
-
 
 if ( ! function_exists('aes_encrypt'))
 {
