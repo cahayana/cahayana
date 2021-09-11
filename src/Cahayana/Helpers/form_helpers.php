@@ -68,6 +68,7 @@ if ( ! function_exists('form_dropdown'))
         else
         {
             $defaults = array('name' => $data);
+            $data = [];
         }
 
         is_array($selected) OR $selected = array($selected);
