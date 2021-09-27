@@ -38,13 +38,19 @@ class Response
 
         }
         else{
+            $error = [
+                'code' => $http_code,
+                'message' => $data
+            ];
+
+            if(is_array($data) || is_object($data) ){
+                $error = $data;
+            }
+
             $response = [
                 'success'=>false,
                 'response_code' => $http_code,
-                'error' => [
-                    'error_code' => $http_code,
-                    'error_message' => $data
-                ]
+                'error' => $error
             ];
         }
 
