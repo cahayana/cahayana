@@ -86,7 +86,7 @@ class Redis implements RedisInterface
      */
     public function delete(string $key)
     {
-        return !!LaravelRedis::delete($key);
+        return !!LaravelRedis::dell($key);
     }
 
     /**
