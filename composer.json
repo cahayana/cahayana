@@ -13,9 +13,9 @@
         "ext-json": "*",
         "ext-mbstring": "*",
         "ext-zlib": "*",
-        "illuminate/support": "^8",
-        "illuminate/redis": "^8",
-        "illuminate/database": "^8",
+        "illuminate/support": "^8|^9",
+        "illuminate/redis": "^8|^9",
+        "illuminate/database": "^8|^9",
         "jenssegers/agent": "^2",
         "spatie/laravel-collection-macros": "^7.4"
     },
