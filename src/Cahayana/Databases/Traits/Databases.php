@@ -72,11 +72,11 @@ trait Databases
      * @param string $connection
      * @return bool
      */
-    public function insert_return_id_table(string $table_name, array $insert_data = array(), string $connection = 'default')
+    public function insert_return_id_table(string $table_name, array $insert_data = array(), string $connection = 'default', string $custom_id_field = null)
     {
         if (is_array($insert_data) && count($insert_data) > 0)
         {
-            return $this->table($table_name,$connection)->insertGetId($insert_data);
+            return $this->table($table_name,$connection)->insertGetId($insert_data,$custom_id_field);
         }
         else
         {
