@@ -46,7 +46,7 @@ interface DatabasesInterface
      * @param string $connection
      * @return bool|integer
      */
-    public function insert_return_id_table(string $table_name, array $insert_data = array(), string $connection = 'default');
+    public function insert_return_id_table(string $table_name, array $insert_data = array(), string $connection = 'default', string $custom_id_field = null);
 
     /**
      * manual update table w/o model
