@@ -161,6 +161,9 @@ if ( ! function_exists('format_date'))
             case 'full_date_time':
                 $format = 'l, d F Y - H:i:s';
                 break;
+            case 'date_time':
+                $format = 'd F Y - H:i:s';
+                break
             default:
                 $format = 'Y-m-d H:i:s';
                 break;
