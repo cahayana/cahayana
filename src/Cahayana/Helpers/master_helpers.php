@@ -163,7 +163,7 @@ if ( ! function_exists('format_date'))
                 break;
             case 'date_time':
                 $format = 'd F Y - H:i:s';
-                break
+                break;
             default:
                 $format = 'Y-m-d H:i:s';
                 break;
