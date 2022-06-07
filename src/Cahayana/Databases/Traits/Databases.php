@@ -23,7 +23,7 @@ trait Databases
      * @param string $connection
      * @return \Illuminate\Database\ConnectionInterface
      */
-    public function connection(string $connection = 'default')
+    public function connection(string $connection = 'default'): \Illuminate\Database\ConnectionInterface
     {
         $connection = $connection == 'default' ? (!is_null($this->db_connection) ? $this->db_connection : config('database.default')) : $connection;
 
@@ -52,7 +52,7 @@ trait Databases
      * @param string $connection
      * @return bool
      */
-    public function insert_table(string $table_name, array $insert_data = [], string $connection = 'default')
+    public function insert_table(string $table_name, array $insert_data = [], string $connection = 'default'): bool
     {
         if (is_array($insert_data) && count($insert_data) > 0)
         {
@@ -70,9 +70,9 @@ trait Databases
      * @param string $table_name
      * @param array $insert_data
      * @param string $connection
-     * @return bool
+     * @return int
      */
-    public function insert_return_id_table(string $table_name, array $insert_data = array(), string $connection = 'default', string $custom_id_field = null)
+    public function insert_return_id_table(string $table_name, array $insert_data = array(), string $connection = 'default', string $custom_id_field = null): int
     {
         if (is_array($insert_data) && count($insert_data) > 0)
         {
@@ -80,7 +80,7 @@ trait Databases
         }
         else
         {
-            return false;
+            return 0;
         }
     }
 
@@ -91,13 +91,13 @@ trait Databases
      * @param array $where
      * @param array $update_data
      * @param string $connection
-     * @return bool|int
+     * @return int
      */
-    public function update_table(string $table_name, array $where, array $update_data = [], string $connection = 'default')
+    public function update_table(string $table_name, array $where, array $update_data = [], string $connection = 'default'): int
     {
         if (!is_array($where))
         {
-            return false;
+            return 0;
         }
 
         if (is_array($update_data) && count($update_data) > 0)
@@ -106,7 +106,7 @@ trait Databases
         }
         else
         {
-            return false;
+            return 0;
         }
     }
 
@@ -116,13 +116,13 @@ trait Databases
      * @param string $table_name
      * @param array $where
      * @param string $connection
-     * @return bool|int
+     * @return int
      */
-    public function delete_table(string $table_name, array $where, string $connection = 'default')
+    public function delete_table(string $table_name, array $where, string $connection = 'default'): int
     {
         if (!is_array($where))
         {
-            return false;
+            return 0;
         }
 
         return $this->table($table_name,$connection)->where($where)->delete();
@@ -135,7 +135,7 @@ trait Databases
      * @param string $connection (optional connection)
      * @return bool
      */
-    public function has_table(string $table_name, string $connection = 'default')
+    public function has_table(string $table_name, string $connection = 'default'): bool
     {
         $connection = $connection == 'default' ? (!is_null($this->db_connection) ? $this->db_connection : config('database.default')) : $connection;
 
@@ -149,7 +149,7 @@ trait Databases
      * @param string $connection
      * @return \Illuminate\Support\Collection
      */
-    public function query(string $query, string $connection = 'default')
+    public function query(string $query, string $connection = 'default'): \Illuminate\Support\Collection
     {
         $connection = $connection == 'default' ? (!is_null($this->db_connection) ? $this->db_connection : config('database.default')) : $connection;
 
@@ -160,7 +160,8 @@ trait Databases
      * @param string $query
      * @return \Illuminate\Database\Query\Expression
      */
-    public function raw(string $query){
+    public function raw(string $query): \Illuminate\Database\Query\Expression
+    {
         return DB::raw($query);
     }
 
